@@ -3,6 +3,7 @@
 * {
     --list-item-bg-color: #47996d;
     --list-item-border-color: #3B805B;
+    --list-item-border-width: 1px;
     box-sizing: border-box;
     font-size: 18px;
     font-family: sans-serif;
@@ -18,12 +19,20 @@ section {
     list-style: none;
 }
 
-.nav-subcontainer, .nav-submenu {
+.nav-submenu {
     display: none;
 }
 
 .nav-list-item {
     display: inline-block;
+    position: relative;
+    background: var(--list-item-bg-color);
+    border: 1px solid var(--list-item-border-color);
+}
+
+.nav-list-subitem {
+    display: block;
+    position: relative;
 }
 
 .nav-link {
@@ -33,9 +42,32 @@ section {
     font-size: 20px;
     width: 150px;
     height: 50px;
-    background: var(--list-item-bg-color);
-    border: 1px solid var(--list-item-border-color);
     text-decoration: none;
     color: white;
 }
 
+.nav-list-item:hover {
+    background: var(--list-item-border-color);
+}
+
+.nav-list-item:hover > .nav-subcontainer {
+    display: block;
+}
+
+.nav-subcontainer {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: calc(var(--list-item-border-width) * -1);
+}
+
+.nav-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: calc(var(--list-item-border-width) * -1);
+}
+
+.nav-list-subitem:hover > .nav-submenu {
+    display: block;
+}
