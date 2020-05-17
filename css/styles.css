@@ -1,5 +1,41 @@
 @import "reset.css";
 
 * {
+    --list-item-bg-color: #47996d;
+    --list-item-border-color: #3B805B;
     box-sizing: border-box;
+    font-size: 18px;
+    font-family: sans-serif;
 }
+
+section {
+    padding: 25px;
+    width: 800px;
+}
+
+.nav-container {
+    font-size: 0;
+    list-style: none;
+}
+
+.nav-subcontainer, .nav-submenu {
+    display: none;
+}
+
+.nav-list-item {
+    display: inline-block;
+}
+
+.nav-link {
+    display: block;
+    padding: 14px;
+    text-align: center;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    background: var(--list-item-bg-color);
+    border: 1px solid var(--list-item-border-color);
+    text-decoration: none;
+    color: white;
+}
+
